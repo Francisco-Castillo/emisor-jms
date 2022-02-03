@@ -5,23 +5,23 @@
  */
 package com.fcastillo.test.jms.ejb;
 
-import javax.annotation.Resource;
-import javax.ejb.Stateless;
-import javax.jms.Connection;
-import javax.jms.ConnectionFactory;
-import javax.jms.JMSException;
-import javax.jms.MessageProducer;
-import javax.jms.Queue;
-import javax.jms.Session;
-import javax.jms.TextMessage;
+import jakarta.annotation.Resource;
+import jakarta.ejb.Stateless;
+import jakarta.jms.Connection;
+import jakarta.jms.ConnectionFactory;
+import jakarta.jms.JMSException;
+import jakarta.jms.MessageProducer;
+import jakarta.jms.Queue;
+import jakarta.jms.Session;
+import jakarta.jms.TextMessage;
 
 @Stateless
 public class DeliverySender {
 
-    @Resource(mappedName = "jms/NewDemoFactory")
+    @Resource(mappedName = "jms/DemoFactory")
     private ConnectionFactory connectionFactory;
 
-    @Resource(mappedName = "jms/NewDemo")
+    @Resource(mappedName = "jms/Demo")
     private Queue queue;
 
     public void sendMessage(String text) throws JMSException {
